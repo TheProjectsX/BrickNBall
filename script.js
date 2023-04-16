@@ -33,12 +33,12 @@ let plateMovementUnit = 2;
 
 function setupGame() {
     ballInX = 17;
-    ballInY = 11;
+    ballInY = 10;
 
     velocityX = -1;
     velocityY = 0;
 
-    userPlatePosition = [10, 14];
+    userPlatePosition = [9, 13];
     bricksPositions = [];
 
     brickWidth = 2;
@@ -90,7 +90,7 @@ function setScoreBoard() {
     }
 
     if (currentHighScore == 0) {
-        currentHighScore = Number.parseInt(localStorage.getItem("highScore"));
+        currentHighScore = Number.parseInt(localStorage.getItem("brickNBallHighScore"));
         if (isNaN(currentHighScore)) {
             localStorage.setItem("highScore", 0);
             currentHighScore = 0;
@@ -99,7 +99,7 @@ function setScoreBoard() {
 
     if (currentScore > currentHighScore) {
         currentHighScore += 10;
-        localStorage.setItem("highScore", currentHighScore);
+        localStorage.setItem("brickNBallHighScore", currentHighScore);
     }
 
     score.innerText = currentScore.toString().length < 2 ? "0" + currentScore : currentScore;
