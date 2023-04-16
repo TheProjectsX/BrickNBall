@@ -15,6 +15,13 @@ body {
     font-family: sans-serif;
 }
 
+@media (width < 450px){
+    body{
+       justify-content: flex-start;
+       padding-top: 10%;
+    }
+}
+
 .notice {
     display: none;
 
